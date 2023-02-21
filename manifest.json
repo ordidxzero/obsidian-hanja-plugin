@@ -1,10 +1,10 @@
 {
-  "id": "preact-starter",
-  "name": "Preact Starter",
-  "description": "Obsidian + PreactJS",
-  "version": "0.0.0",
-  "author": "Liam Cain",
-  "authorUrl": "https://github.com/liamcain/",
+  "id": "hanja-plugin",
+  "name": "Hanja Block Plugin",
+  "description": "한자를 정리하기 위한 플러그인입니다.",
+  "version": "1.0.0",
+  "author": "ordidxzero",
+  "authorUrl": "https://github.com/ordidxzero/",
   "isDesktopOnly": true,
   "minAppVersion": "0.10.8"
 }

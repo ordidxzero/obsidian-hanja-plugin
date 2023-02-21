@@ -1,7 +1,118 @@
-.DiceRoller__container {
-  display: flex;
+.__hanja-flex {
+  display: flex !important
 }
 
-.DiceRoller__container input {
-  width: 60px;
+.__hanja-h-40 {
+  height: 10rem !important
+}
+
+.__hanja-h-full {
+  height: 100% !important
+}
+
+.__hanja-w-40 {
+  width: 10rem !important
+}
+
+.__hanja-w-full {
+  width: 100% !important
+}
+
+.__hanja-flex-1 {
+  flex: 1 1 0% !important
+}
+
+.__hanja-select-none {
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+          user-select: none !important
+}
+
+.__hanja-flex-col {
+  flex-direction: column !important
+}
+
+.__hanja-flex-wrap {
+  flex-wrap: wrap !important
+}
+
+.__hanja-items-start {
+  align-items: flex-start !important
+}
+
+.__hanja-items-center {
+  align-items: center !important
+}
+
+.__hanja-justify-start {
+  justify-content: flex-start !important
+}
+
+.__hanja-justify-center {
+  justify-content: center !important
+}
+
+.__hanja-justify-between {
+  justify-content: space-between !important
+}
+
+.__hanja-gap-2 {
+  gap: 0.5rem !important
+}
+
+.__hanja-gap-4 {
+  gap: 1rem !important
+}
+
+.__hanja-rounded {
+  border-radius: 0.25rem !important
+}
+
+.__hanja-rounded-2xl {
+  border-radius: 1rem !important
+}
+
+.__hanja-p-2 {
+  padding: 0.5rem !important
+}
+
+.__hanja-px-2 {
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important
+}
+
+.__hanja-py-1 {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important
+}
+
+.__hanja-px-3 {
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important
+}
+
+.__hanja-pb-5 {
+  padding-bottom: 1.25rem !important
+}
+
+.__hanja-text-\[150px\] {
+  font-size: 150px !important
+}
+
+.__hanja-text-lg {
+  font-size: 1.125rem !important;
+  line-height: 1.75rem !important
+}
+
+.__hanja-font-bold {
+  font-weight: 700 !important
+}
+
+.__hanja-leading-none {
+  line-height: 1 !important
+}
+
+.__hanja-text-rose-600 {
+  --tw-text-opacity: 1 !important;
+  color: rgb(225 29 72 / var(--tw-text-opacity)) !important
 }

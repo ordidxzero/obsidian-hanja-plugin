@@ -1,48 +1,33 @@
-import { ItemView, Plugin, WorkspaceLeaf } from 'obsidian';
-import { h, render, VNode } from 'preact';
-
-import DiceRoller from './ui/DicerRoller';
+/* eslint-disable prettier/prettier */
+/* eslint-disable */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { Plugin } from 'obsidian';
+import { html, render } from 'htm/preact';
+import HanjaRenderer from './HanjaRenderer';
+import parseEventSpec from './utils/yaml-parser';
 
 const VIEW_TYPE = 'react-view';
 
-class MyReactView extends ItemView {
-  private reactComponent: VNode;
+const ICON_NAME = 'languages';
 
-  getViewType(): string {
-    return VIEW_TYPE;
-  }
+const PLUGIN_TITLE = 'Hanja Block';
 
-  getDisplayText(): string {
-    return 'Dice Roller';
-  }
-
-  getIcon(): string {
-    return 'calendar-with-checkmark';
-  }
-
-  async onOpen(): Promise<void> {
-    this.reactComponent = h(DiceRoller, {});
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    render(this.reactComponent, (this as any).contentEl);
-  }
-}
-
-export default class ReactStarterPlugin extends Plugin {
-  private view: MyReactView;
+export default class HanjaBlockPlugin extends Plugin {
+  private reactComponent: any;
 
   async onload(): Promise<void> {
-    this.registerView(VIEW_TYPE, (leaf: WorkspaceLeaf) => (this.view = new MyReactView(leaf)));
-
-    this.app.workspace.onLayoutReady(this.onLayoutReady.bind(this));
+    console.log('Loading Hanja Block Plugin');
+    // this.addRibbonIcon(ICON_NAME, PLUGIN_TITLE, () => {
+    // return new Notice('This is a test!');
+    // });
+    this.registerMarkdownCodeBlockProcessor('hanja-block', (source, el, __) => {
+      const props = { id: 123, source: parseEventSpec(source) };
+      render(html`<${HanjaRenderer} props=${props} />`, el);
+    });
   }
 
-  onLayoutReady(): void {
-    if (this.app.workspace.getLeavesOfType(VIEW_TYPE).length) {
-      return;
-    }
-    this.app.workspace.getRightLeaf(false).setViewState({
-      type: VIEW_TYPE,
-    });
+  async onunload(): Promise<void> {
+    console.log('Unloading Plugin');
+    // this.app.workspace.detachLeavesOfType(VIEW_TYPE);
   }
 }
