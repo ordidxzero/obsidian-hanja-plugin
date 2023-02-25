@@ -6,8 +6,6 @@ import { html, render } from 'htm/preact';
 import HanjaRenderer from './HanjaRenderer';
 import parseEventSpec from './utils/yaml-parser';
 
-const VIEW_TYPE = 'react-view';
-
 const ICON_NAME = 'languages';
 
 const PLUGIN_TITLE = 'Hanja Block';
